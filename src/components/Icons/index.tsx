@@ -25,20 +25,14 @@ export enum IconNames {
     FEEDBACK = "feedback",
 }
 
-interface IconProps {
-    height?: number;
-    width?: number;
+interface IconProps extends React.SVGProps<SVGSVGElement> {
     iconName: IconNames;
 }
 
-export function IconWrapper(props: IconProps) {
-    const iconProps = {
-        height: ICON_HEIGHT,
-        width: ICON_WIDTH,
-        ...props,
-    };
-    delete iconProps.iconName; // not valid svg prop
-    switch (props.iconName) {
+const Icon: React.FC<IconProps> = (props) => {
+    const { iconName, ...iconProps } = props;
+
+    switch (iconName) {
         // 3. Add a case statement for each supported icon
         case IconNames.PENCIL:
             return <IconPencil {...iconProps} />;
@@ -58,6 +52,8 @@ export function IconWrapper(props: IconProps) {
             return <IconFeedback {...iconProps} />;
         default:
             // This is basically an unsupported icon
-            return <div>{`UNSUPPORTED ICON: ${props.iconName}`}</div>;
+            return <div>{`UNSUPPORTED ICON: ${iconName}`}</div>;
     }
-}
+};
+
+export default Icon;

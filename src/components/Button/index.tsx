@@ -1,5 +1,5 @@
 import React from "react";
-import { IconWrapper, IconNames } from "../Icons";
+import Icon, { IconNames } from "../Icons";
 import "./styles.css";
 
 const DEFAULT_BUTTON_TEXT = "Untitled Button";
@@ -38,12 +38,11 @@ export function Button(props: ButtonProps) {
         return (
             <a href={props.href} target="_blank" rel="noopener noreferrer">
                 <button
-                    className={`button${
-                        props.className ? " " + props.className : ""
-                    }`}
+                    className={`button${props.className ? " " + props.className : ""
+                        }`}
                 >
                     {iconName ? (
-                        <IconWrapper iconName={iconName} />
+                        <Icon iconName={iconName} />
                     ) : (
                         <span className="button__text">{buttonText} </span>
                     )}
@@ -54,12 +53,11 @@ export function Button(props: ButtonProps) {
     return (
         <button
             onClick={(ev) => (onClick ? onClick(ev, props) : null)}
-            className={`button${selected ? " selected" : ""}${
-                props.className ? " " + props.className : ""
-            }`}
+            className={`button${selected ? " selected" : ""}${props.className ? " " + props.className : ""
+                }`}
         >
             {iconName ? (
-                <IconWrapper iconName={iconName} />
+                <Icon iconName={iconName} />
             ) : (
                 <span className="button__text">{buttonText} </span>
             )}

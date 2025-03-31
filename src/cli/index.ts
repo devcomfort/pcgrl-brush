@@ -2,7 +2,7 @@ import "@tensorflow/tfjs-node"; // improves TF performance on node
 import * as yargs from "yargs";
 import * as fs from "fs";
 import * as path from "path";
-import * as glob from "glob";
+import { glob } from "glob";
 import { GameService, Games, SolverSokoban } from "../services/Game";
 import _ from "lodash";
 import { GeneratedMapResults } from "../services/Game/index";
@@ -111,13 +111,13 @@ export class CLI {
         }
     }
 
-    public solveMapFromJSON(args: CLIArgs) {
+    public async solveMapFromJSON(args: CLIArgs) {
         const files = [];
         console.log("args", args);
         const mapJsonPath: string = args.mapJson;
         if (args.inputFiles) {
-            const globbedFiles = glob.sync(args.inputFiles);
-            globbedFiles.forEach((f) => files.push(f));
+            const globbedFiles = await glob(args.inputFiles);
+            globbedFiles.forEach((f: string) => files.push(f));
         }
 
         if (mapJsonPath) {

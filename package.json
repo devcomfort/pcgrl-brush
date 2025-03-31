@@ -3,29 +3,33 @@
     "version": "0.0.3",
     "private": true,
     "dependencies": {
-        "@tensorflow/tfjs": "^1.7.1",
-        "@tensorflow/tfjs-node": "^1.7.4",
-        "@testing-library/jest-dom": "^4.2.4",
-        "@testing-library/react": "^9.3.2",
-        "@testing-library/user-event": "^7.1.2",
-        "@types/jest": "^24.0.0",
-        "@types/lodash": "^4.14.150",
-        "@types/node": "^12.0.0",
+        "@tensorflow/tfjs": "^4.17.0",
+        "@tensorflow/tfjs-node": "^4.17.0",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.1",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/jest": "^29.5.12",
+        "@types/lodash": "^4.14.202",
+        "@types/node": "^20.11.19",
         "@types/numjs": "^0.14.4",
-        "@types/react": "^16.9.0",
-        "@types/react-dom": "^16.9.0",
-        "@types/yargs": "^15.0.5",
-        "lodash": "^4.17.15",
+        "@types/react": "^18.2.57",
+        "@types/react-dom": "^18.2.19",
+        "@types/yargs": "^17.0.32",
+        "lodash": "^4.17.21",
         "node-glob": "^1.2.0",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
-        "react-scripts": "3.4.1",
-        "ts-node": "^8.10.1",
-        "typescript": "~3.7.2",
-        "yargs": "^15.3.1"
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-scripts": "5.0.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3",
+        "yargs": "^17.7.2",
+        "glob": "^10.3.10",
+        "@types/glob": "^8.1.0",
+        "eslint": "^8.56.0",
+        "eslint-config-react-app": "^7.0.1"
     },
     "engines": {
-        "node": ">=12.1 <13.0"
+        "node": ">=16.0.0"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -47,5 +51,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    }
+    },
+    "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af"
 }
